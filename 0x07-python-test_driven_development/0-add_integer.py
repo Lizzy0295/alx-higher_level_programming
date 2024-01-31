@@ -3,7 +3,7 @@
 """0-add_integer
 The function "add_integer"  returns the sum of two integers.
 """
-def add_integer(a, b=98):
+def add_integer(a, b = 98):
     """adds two integers function body"""
 
     if type(a) not in [int, float]:
