@@ -1,33 +1,42 @@
 #!/usr/bin/python3
-"""text"""
+"""
+    5-text_indentation Module
+"""
 
 
 def text_indentation(text):
     """
-    prints a text
-    Args: 
-        text (str): text
-    """
-    if not isinstance(text, str):
-        raise TypeError("text must be a string")
-    i = 0
-    for sp in text:
-        if sp == ' ':
-            i += 1
-        else:
-            break
+        Prints a text with 2 new lines after each of this characters
+        '.', '?', ':'
 
-    for sp in text:
-        print(sp, end="")
-        if sp == "\n" or sp in ".?:":
-            if sp in ".?:":
-                print("\n")
-            i = 0
-            continue
-        elif sp == ' ':
-            i += 1
-            if i == 2:
-                print("\n")
-                i = 0
-                continue
-        i = 0
+        Args:
+            text: inital string to work on
+    """
+    if type(text) is not str:
+        raise TypeError("text must be a string")
+
+    split_text_list = list()
+    new_text = list()
+    letters_list = list()
+
+    for character in text:
+        letters_list.append(character)
+        if character in ['.', '?', ':']:
+            split_text_list.append(''.join(letters_list))
+            letters_list.clear()
+
+    if letters_list:
+        split_text_list.append("".join(letters_list))
+    letters_list.clear()
+
+    for sentence in split_text_list:
+        new_text.append(sentence.strip(' '))
+    split_text_list.clear()
+
+    for character in new_text[-1]:
+        if character in ['.', '?', ':']:
+            print("\n\n".join(new_text))
+            print()
+            return
+
+    print("\n\n".join(new_text), end='')
