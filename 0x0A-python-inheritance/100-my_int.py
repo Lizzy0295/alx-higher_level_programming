@@ -1,13 +1,21 @@
 #!/usr/bin/python3
-""" New class """
+"""
+12. My integer
+"""
 
 
 class MyInt(int):
-    """ My int inherits from int """
-    def __eq__(self, num):
-        """ Function for equals """
-        return(int(self) != int(num))
+    """
+    a rebel of int
+    """
+    def __eq__(self, other):
+        """
+        override the default behavior of ==
+        """
+        return super().__ne__(other)
 
-    def __ne__(self, num):
-        """ Function for not equals """
-        return (int(self) == int(num))
+    def __ne__(self, other):
+        """
+        override the default behavior of !=
+        """
+        return super().__eq__(other)
