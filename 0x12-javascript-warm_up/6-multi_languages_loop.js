@@ -1,7 +1,5 @@
 #!/usr/bin/node
+for (const line of ['C is fun', 'Python is cool', 'JavaScript is amazing']) {
 
-// ['C is fun', 'Python is cool', 'JavaScript is amazing'].forEach((e) => console.log(e));
-
-const msg = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
-
-msg.forEach((element) => console.log(element));
+	console.log(line);
+}
